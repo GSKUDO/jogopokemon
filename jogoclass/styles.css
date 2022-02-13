@@ -105,20 +105,33 @@ main{
     flex-direction: row;
     align-items: center;
 }
-.hp-bar,.mp-bar{
-    height: 1em;
-    width: 12em;
-    margin: 0 2px;
-    background-color: green;
-  }
-  .mp-bar{
-    background-color: blue;
-  }
-  .hp-numbers,.mp-numbers{
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-evenly;
-      width: 12em;
-      font-size:x-large;
-      font-weight: bold;
-  }
+.hp-bar,
+.mp-bar {
+  height: 1em;
+  width: 12em;
+  margin: 0 2px;
+  background-color: grey;
+  display: flex;
+}
+#hp-p1, #hp-p2{
+  --hp: 100;
+}
+#hp-p1::before, #hp-p2::before {
+  content: "";
+  width: calc(var(--hp) * 1%);
+  background-color: hsl( calc(var(--hp) * 1.2) , 80%, 50%);
+  transition: all 0.2s ease;
+}
+
+.mp-bar {
+  background-color: blue;
+}
+
+.hp-numbers,
+.mp-numbers {
+  display: flex;
+  justify-content: space-evenly;
+  width: 12em;
+  font-size: x-large;
+  font-weight: bold;
+}
