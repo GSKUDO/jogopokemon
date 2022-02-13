@@ -1,0 +1,116 @@
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Batalha épica</title>
+  </head>
+
+  <body>
+    <h1 id="titulojogo">A Grande Batalha</h1>
+    <br>
+    <div id="parte1">
+      <h2>Escolha seu pokemon: </h2>
+      <div id="listapersonagens">
+        <button class="poke" onclick="escolherpersonagem(1)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(2)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(3)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(4)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(5)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(6)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(7)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(8)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(9)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(10)"><img src="assets/images/pokebola.png"></button>
+        <button class="poke" onclick="escolherpersonagem(11)"><img src="assets/images/pokebola.png"></button>  
+      </div>
+
+        <div id="players">
+        
+        <img id="escolhap1">
+ 
+        <h1><img src="assets/images/vs.png"></h1>
+ 
+        <img id="escolhap2">
+       
+      </div>
+    </div>
+</div>
+<main>
+    <button id="btnbatalha" onclick="batalhar()"><img src="assets/images/botaoluta.png" style="height: fit-content;"></button>
+</main>
+    <div id="parte2" style="display:none">
+      <main>
+        <div id="battle-area">
+          <div class="player" id="player1">
+            <div class="status-player">
+              <h2 id="player1-monster-name"></h2>
+              <div class="hp">
+                <h3>HP:</h3>
+                <div class="hp-bar"></div>
+              </div>
+              <div class="hp-numbers">
+                <div id="actual-hp-player1">100</div>
+                <div>/</div>
+                <div id="total-hp-player1">100</div>
+              </div>
+              <div class="mp">
+                <h3>MP:</h3>
+                <div class="mp-bar"></div>
+              </div>
+              <div class="mp-numbers">
+                <div id="actual-mp-player1">10</div>
+                <div>/</div>
+                <div id="total-mp-player1">10</div>
+              </div>
+              <div id="commands-player2">
+                <input type="button" value="ATK Fraco">
+                <input type="button" value="ATK Forte">
+                <input type="button" value="Especial">
+
+              </div>
+            </div>
+            <img class="img-player" id="img-player1">
+            <div></div>
+          </div>
+          <div class="player" id="player2">
+            <div class="status-player">
+              <h2 id="player2-monster-name"></h2>
+              <div class="hp">
+                <h3>HP:</h3>
+                <div class="hp-bar"></div>
+              </div>
+              <div class="hp-numbers">
+                <div id="actual-hp-player2">100</div>
+                <div>/</div>
+                <div id="total-hp-player2">100</div>
+              </div>
+              <div class="mp">
+                <h3>MP:</h3>
+                <div class="mp-bar"></div>
+              </div>
+              <div class="mp-numbers">
+                <div id="actual-mp-player2">10</div>
+                <div>/</div>
+                <div id="total-mp-player2">10</div>
+              </div>
+              <div id="commands-player2">
+                <input type="button" value="ATK Fraco">
+                <input type="button" value="ATK Forte">
+                <input type="button" value="Especial">
+
+              </div>
+            </div>
+            <img class="img-player" id="img-player2">
+          </div>
+        </div>
+        <br>
+        <button onclick="reiniciar()">reiniciar</button>
+      </main>
+    </div>
+    <script src="jogoclass.js"></script>
+  </body>
+
+</html>
