@@ -89,9 +89,10 @@ main{
 #player2{
     flex-direction: row-reverse;
 }
-#img-player{
-    max-height: 13em;
-    max-width: 18em;
+.img-player{
+    margin: 20px;
+    height: 180px;
+    width: auto;
 }
 .status-player{
     display: flex;

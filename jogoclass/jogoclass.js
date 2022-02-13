@@ -53,17 +53,17 @@ function reiniciar(){
   document.getElementById('btnbatalha').style.display='block';
 }
 
-let mula = new Hero("Mula sem Cabeça", 2, "Mitologico", 5, 15, 30);
-let monica = new Hero("Mônica", 2, "Mitologico", 5, 15, 30);
-let princesa = new Hero("Shena", 2, "Mitologico", 5, 15, 30);
-let darth = new Hero("Darth Vader", 2, "Mitologico", 5, 15, 30);
-let chucky = new Hero("Chucky", 2, "Mitologico", 5, 15, 30);
-let freddy = new Hero("Freddy", 2, "Mitologico", 5, 15, 30);
-let pintinho = new Hero("Pintinho Amarelinho", 2, "Mitologico", 5, 15, 30);
-let lula = new Hero("Lula Molusco", 2, "Mitologico", 5, 15, 30);
-let yoshi = new Hero("Yoshi", 2, "Mitologico", 5, 15, 30);
-let bart = new Hero("Bart Simpsons", 2, "Mitologico", 5, 15, 30);
-let boitata = new Hero("Boitata", 1, "Herois", 10, 25, 14);
+let mula = new Hero("Mula sem Cabeça", 2, "Mitologico", 5, 10, 10);
+let monica = new Hero("Mônica", 1, "Kids", 4, 15, 30);
+let princesa = new Hero("Shena", 2, "Guerreira", 5, 25, 8);
+let darth = new Hero("Darth Vader", 3, "Mal", 8, 15, 30);
+let chucky = new Hero("Chucky", 3, "Brinquedo", 1, 60, 90);
+let freddy = new Hero("Freddy", 2, "Animatronic", 6, 15, 45);
+let pintinho = new Hero("Pintinho Amarelinho", 2, "Fazenda", 11, 25, 40);
+let lula = new Hero("Lula Molusco", 1, "Mar", 16, 8, 20);
+let yoshi = new Hero("Yoshi", 3, "Games", 11, 18, 32);
+let bart = new Hero("Bart Simpsons", 2, "Kids", 7, 19, 34);
+let boitata = new Hero("Boitata", 1, "Mitologico", 13, 32, 19);
 
 let vez = 1;
 let player1;
@@ -97,12 +97,16 @@ function escolherpersonagem(value){
 
 function aparecerimagem(imagem, selecionado){
   if (vez === 1){
+    document.querySelector("#img-player1").setAttribute('src', imagem);
     document.querySelector("#escolhap1").setAttribute('src', imagem);
     player1 = selecionado;
     vez = 2;
+    document.getElementById("player1-monster-name").innerHTML = player1.name;
   }else{
     document.querySelector("#escolhap2").setAttribute('src', imagem);
+    document.querySelector("#img-player2").setAttribute('src', imagem);
     player2 = selecionado;
     vez = 1;
+    document.getElementById("player2-monster-name").innerHTML = player2.name;
   }
 }
