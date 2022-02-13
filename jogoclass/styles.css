@@ -6,6 +6,22 @@
     margin-bottom: 100px;
 }
 
+#btnbatalha{
+    border-radius: 25%;
+    background-color: rgba(22, 63, 22, 0.829);
+}
+
+#escolhap1, #escolhap2{
+    height: 200px;
+    width: auto;
+}
+
+.poke{
+    background-color: black;
+    border-radius: 50%;
+    padding: 0;
+}
+
 .personagens{
     display: flex;
     flex-direction: column;
