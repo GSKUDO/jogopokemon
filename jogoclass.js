@@ -11,6 +11,9 @@ class Hero {
       this.def = this.agi * 2 //Defesa
       this.atkPower = 50 //Ataque base
       this.dmgUp()
+      this.lightAtk()
+      this.hardAtk()
+      this.special()
   
     }
     
@@ -39,6 +42,17 @@ class Hero {
   
       }
     }
+    lightAtk(){
+        damage = Math.ceil(this.atkPower * ((Math.random() * 0.4) + 0.4))
+    }
+    hardAtk(){
+        damage = Math.ceil(this.atkPower * ((Math.random() * 0.2) + 0.8))
+    }
+    special(){
+        damage = Math.ceil(this.atkPower * ((Math.random() * 0.5) + 1))
+    }
+  }
+  
 }
 
 function batalhar(){
@@ -116,4 +130,29 @@ function aparecerimagem(imagem, selecionado){
     vez = 1;
     document.getElementById("player2-monster-name").innerHTML = player2.name;
   }
+}
+
+const HPTotalP1 = 100;
+let HPActualP1 = 100;
+const ShowedHPActualP1 = document.getElementById("actual-hp-player1")
+const ShowedHPTotalP1 = document.getElementById("total-hp-player1")
+const HPBarP1 = document.getElementById("hp-p1")
+
+const HPTotalP2 = 100;
+let HPActualP2 = 100;
+const ShowedHPActualP2 = document.getElementById("actual-hp-player2")
+const ShowedHPTotalP2 = document.getElementById("total-hp-player2")
+const HPBarP2 = document.getElementById("hp-p2")
+
+ShowedHPTotalP1.innerHTML = HPTotalP1
+ShowedHPActualP1.innerHTML = HPActualP1
+
+function atkSimulation(){
+    HPActualP2 = HPActualP2 - 10
+    atualizaHP()
+}
+function atualizaHP(){
+    ShowedHPActualP2.innerHTML = HPActualP2
+    let hp = (HPActualP2 / HPTotalP2)*100
+    HPBarP2.style.setProperty('--hp',hp)
 }
