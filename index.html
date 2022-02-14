@@ -26,21 +26,28 @@
         <button class="poke" onclick="escolherpersonagem(10)"><img src="assets/images/pokebola.png"></button>
         <button class="poke" onclick="escolherpersonagem(11)"><img src="assets/images/pokebola.png"></button>  
       </div>
-
-        <div id="players">
+      <div id="confronto">
+        <div class="personagem">
+            <h2 id="nome-personagem-p1"></h2>
+            <img id="escolhap1">
+            <h3 id="universo-personagem-p1"></h3>
+        </div>
         
-        <img id="escolhap1">
+        <img src="assets/images/vs.png">
  
-        <h1><img src="assets/images/vs.png"></h1>
- 
-        <img id="escolhap2">
-       
+        
+        <div class="personagem">
+            <h2 id="nome-personagem-p2"></h2>
+            <img id="escolhap2">
+            <h3 id="universo-personagem-p2"></h3>
+        </div>
+    </div>
       </div>
     </div>
 </div>
-<main>
-    <button id="btnbatalha" onclick="batalhar()"><img src="assets/images/botaoluta.png" style="height: fit-content;"></button>
-</main>
+
+    <div id="div-btn"><button id="btnbatalha" onclick="batalhar()"><img src="assets/images/botaoluta.png" style="height: fit-content;"></button></div>
+
     <div id="parte2" style="display:none">
   <main>
         <div id="battle-area">
@@ -67,8 +74,8 @@
                     </div>
                     <div id="commands-player1">
                         <input type="button" value="ATK Fraco" onclick="atkp1()">
-                        <input type="button" value="ATK Forte" onclick="atkFortep1()">
-                        <input type="button" value="Especial" onclick="atkEspecialp1()">
+                        <input type="button" value="ATK Forte" id="btnForte1" onclick="atkFortep1()">
+                        <input type="button" value="Especial" id="btnEspecial1" onclick="atkEspecialp1()">
 
                     </div>
                 </div>
@@ -98,12 +105,12 @@
                     </div>
                     <div id="commands-player2">
                         <input type="button" value="ATK Fraco" onclick="atkp2()">
-                        <input type="button" value="ATK Forte" onclick="atkFortep2()">
-                        <input type="button" value="Especial" onclick="atkEspecialp2()">
+                        <input type="button" value="ATK Forte" id="btnForte2" onclick="atkFortep2()">
+                        <input type="button" value="Especial" id="btnEspecial2" onclick="atkEspecialp2()">
 
                     </div>
                 </div>
-                <img class="img-player" id="img-player2">
+                <img class="img-player" id="img-player2" >
             </div>
         </div>
         <button onclick="reiniciar()">Reiniciar</button>
