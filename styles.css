@@ -7,8 +7,13 @@
     src: url(./assets/fonts/game_over.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: joystick;
+    src: url(assets/fonts/joystix\ monospace.ttf) format('truetype');
+}
+
 #titulojogo{
-    font-family: game_over;
+    font-family: joystick;
     font-size: 60px;
     color: red;
     text-shadow: 
