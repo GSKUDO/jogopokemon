@@ -1,5 +1,5 @@
 class Hero {
-  constructor(name, type, universe, st, agi, int, atksound, atk2sound, atk3sound,img,rageimg) {
+  constructor(name, type, universe, st, agi, int, atksound, atk2sound, atk3sound, img, rageimg) {
     this.name = name //Nome
     this.type = type //Tipo
     this.universe = universe //Universo. Ex.: Disney, Marvel, League of Legends
@@ -71,18 +71,20 @@ const soundeffect2 = document.getElementById("soundeffect2");
 const music = document.getElementById("theme")
 const textBox = document.getElementById("text-box")
 music.setAttribute("src", "assets/sounds/y2meta.com - Pokemon Stadium Intro HD (256 kbps) (1).mp3")
-music.volume = 1;  
-  $("#teladeinicio").mousemove(function(){
-      music.play();
-  });
+music.volume = 1;
+$("#teladeinicio").mousemove(function () {
+  music.play();
+});
 
 
 //tela de inicio
 function start() {
+  document.querySelector("#escolhap1").setAttribute('src', 'assets/images/nada.png');
+  document.querySelector("#escolhap2").setAttribute('src', 'assets/images/nada.png');
   document.getElementById('teladeinicio').style.display = 'none';
   document.getElementById('parte1').style.display = 'flex';
   music.setAttribute("src", "assets/sounds/y2meta.com - Naruto Ultimate Ninja Storm 2 OST - Character Select (256 kbps).mp3")
-  music.volume = 1;  
+  music.volume = 1;
   music.play();
 
 }
@@ -93,7 +95,6 @@ function batalhar() {
   document.getElementById('teladeinicio').style.display = 'none';
   document.getElementById('parte1').style.display = 'none';
   document.getElementById('parte2').style.display = 'block';
-  document.getElementById('btnbatalha').style.display = 'none';
   music.pause()
   music.setAttribute("src", "assets/sounds/y2meta.com - Pokemon Red, Yellow, Blue Battle Music- Trainer (256 kbps).mp3")
   music.volume = 0.4;
@@ -105,26 +106,29 @@ function batalhar() {
 function randomBackground() {
   const randomNumber = Math.floor(Math.random() * 10)
   const background = backgrounds[randomNumber]
-  const groundColors = ["#72ad73","#7e9f73","#cdd0cf","#f1c66a","#e6a959","#8b6c56","#cc9b4d","#ba5945","#4d6461","#93745c"]
+  const groundColors = ["#72ad73", "#7e9f73", "#cdd0cf", "#f1c66a", "#e6a959", "#8b6c56", "#cc9b4d", "#ba5945", "#4d6461", "#93745c"]
   document.getElementById("battle-area").style.backgroundImage = `url("${background}"`
   document.getElementById("ground-p1").setAttribute("style", `background: ${groundColors[randomNumber]};box-shadow: inset 0 0 1em black;`)
   document.getElementById("ground-p2").setAttribute("style", `background: ${groundColors[randomNumber]};box-shadow: inset 0 0 1em black;`)
 }
 
 // personagens criados pela class Hero pré definidos
-let mula = new Hero("Mula sem Cabeça", 2, "Malora", 20, 26, 10, "assets/sounds/mula/GALLOPS.WAV", "assets/sounds/mula/GALLOPS2.WAV", "assets/sounds/mula/GALLOPS3.WAV","assets/images/mula/mula1.png","assets/images/mula/mula2.png");
-let monica = new Hero("Mônica", 3, "do bairro do Limoeiro", 10, 16, 18, 'assets/sounds/monica/monica1.mp3', 'assets/sounds/monica/monica2.mp3', 'assets/sounds/monica/monica3.mp3',"assets/images/monica/monica1.png","assets/images/monica/monica2.png");
-let princesa = new Hero("Shena", 1, "Guerreira", 23, 20, 20, 'assets/sounds/chena/chena.mp3', 'assets/sounds/chena/chenaescolha.mp3', 'assets/sounds/chena/chena2.mp3',"assets/images/princesa/princesa1.png","assets/images/princesa/princesa2.png");
-let darth = new Hero("Darth Vader", 1, "De uma galáxia muito distante", 33, 13, 20, 'assets/sounds/darth/darthescolha.wav', 'assets/sounds/darth/darth2.wav', 'assets/sounds/darth/darth1.wav',"assets/images/darth/darth1.png","assets/images/darth/darth2.png");
-let chucky = new Hero("Chucky", 1, "Brinquedo Assassino", 25, 20, 15, 'assets/sounds/chucky/Chucky 2.mp3', 'assets/sounds/chucky/chucky.mp3', 'assets/sounds/chucky/chucky3.mp3',"assets/images/chucky/chucky1.png","assets/images/chucky/chucky2.png");
-let freddy = new Hero("Freddy", 2, "Animatronic", 15, 35, 25, 'assets/sounds/freddy/fnaf.wav', 'assets/sounds/freddy/fnaf2.mp3', 'assets/sounds/freddy/fnaf3.wav',"assets/images/freddy/freddy1.png","assets/images/freddy/freddy2.png");
-let pintinho = new Hero("Pintinho Amarelinho", 3, "Fazenda", 10, 20, 30, 'assets/sounds/pintinho/pintinho1.mp3', 'assets/sounds/pintinho/pintinho2.mp3', 'assets/sounds/pintinho/pintinho3.mp3',"assets/images/pintinho/pintinho1.png","assets/images/pintinho/pintinho2.png");
-let lula = new Hero("Lula Molusco", 3, "Fenda do biquini", 10, 12, 12, 'assets/sounds/lula/lula1.mp3', 'assets/sounds/lula/lula2.mp3', 'assets/sounds/lula/lula3.mp3',"assets/images/lula/lula1.png","assets/images/lula/lula2.png");
-let yoshi = new Hero("Yoshi", 2, "Mario World", 19, 30, 12, 'assets/sounds/yoshi/yoshi1.mp3', 'assets/sounds/yoshi/yoshi2.mp3', 'assets/sounds/yoshi/yoshi3.mp3',"assets/images/yoshi/yoshi1.png","assets/images/yoshi/yoshi2.png");
-let bart = new Hero("Bart Simpson", 2, "Springfield", 11, 25, 10, 'assets/sounds/bart/bart1.mp3', 'assets/sounds/bart/bart2.mp3', 'assets/sounds/bart/bart3.mp3',"assets/images/bart/bart1.png","assets/images/bart/bart2.png");
-let boitata = new Hero("Boitatá", 1, "No rio mais proximo de você", 29, 18, 16, 'assets/sounds/boitata/boitata1.mp3', 'assets/sounds/boitata/boitata2.mp3', 'assets/sounds/boitata/boitata3.mp3',"assets/images/boitata/boitata1.png","assets/images/boitata/boitata2.png");
-let charizard = new Hero("Charizard", 1, "Kanto", 30, 25, 18,"","","","assets/images/charizard/charizard1.png","assets/images/charizard/charizard2.png")
-let canarinho = new Hero("Canarinho Pistola",2,"Granja Comary",23,32,25,"","","","assets/images/canarinho/canarinho1.png","assets/images/canarinho/canarinho2.png")
+let mula = new Hero("Mula sem Cabeça", 2, "Malora", 20, 26, 10, "assets/sounds/mula/mula1.wav", "assets/sounds/mula/mula2.wav", "assets/sounds/mula/mula3.wav", "assets/images/mula/mula1.png", "assets/images/mula/mula2.png");
+let monica = new Hero("Mônica", 3, "Bairro do Limoeiro", 15, 16, 18, 'assets/sounds/monica/monica1.mp3', 'assets/sounds/monica/monica2.mp3', 'assets/sounds/monica/monica3.mp3', "assets/images/monica/monica1.png", "assets/images/monica/monica2.png");
+let princesa = new Hero("Xena", 1, "Guerreira", 23, 20, 20, 'assets/sounds/chena/chena1.mp3', 'assets/sounds/chena/chena2.mp3', 'assets/sounds/chena/chena3.mp3', "assets/images/princesa/princesa1.png", "assets/images/princesa/princesa2.png");
+let darth = new Hero("Darth Vader", 1, "Galáxia muito distante", 33, 13, 20, 'assets/sounds/darth/darth1.wav', 'assets/sounds/darth/darth2.wav', 'assets/sounds/darth/darth3.wav', "assets/images/darth/darth1.png", "assets/images/darth/darth2.png");
+let chucky = new Hero("Chucky", 1, "Brinquedo Assassino", 25, 20, 15, 'assets/sounds/chucky/chucky1.mp3', 'assets/sounds/chucky/chucky2.mp3', 'assets/sounds/chucky/chucky3.mp3', "assets/images/chucky/chucky1.png", "assets/images/chucky/chucky2.png");
+let freddy = new Hero("Freddy", 2, "Animatronic", 18, 35, 25, 'assets/sounds/freddy/freddy1.wav', 'assets/sounds/freddy/freddy2.mp3', 'assets/sounds/freddy/freddy3.wav', "assets/images/freddy/freddy1.png", "assets/images/freddy/freddy2.png");
+let pintinho = new Hero("Pintinho Amarelinho", 3, "Fazenda", 15, 20, 30, 'assets/sounds/pintinho/pintinho1.mp3', 'assets/sounds/pintinho/pintinho2.mp3', 'assets/sounds/pintinho/pintinho3.mp3', "assets/images/pintinho/pintinho1.png", "assets/images/pintinho/pintinho2.png");
+let lula = new Hero("Lula Molusco", 3, "Fenda do biquini", 15, 12, 12, 'assets/sounds/lula/lula1.mp3', 'assets/sounds/lula/lula2.mp3', 'assets/sounds/lula/lula3.mp3', "assets/images/lula/lula1.png", "assets/images/lula/lula2.png");
+let yoshi = new Hero("Yoshi", 2, "Mario World", 19, 30, 12, 'assets/sounds/yoshi/yoshi1.mp3', 'assets/sounds/yoshi/yoshi2.mp3', 'assets/sounds/yoshi/yoshi3.mp3', "assets/images/yoshi/yoshi1.png", "assets/images/yoshi/yoshi2.png");
+let bart = new Hero("Bart Simpson", 2, "Springfield", 16, 25, 10, 'assets/sounds/bart/bart1.mp3', 'assets/sounds/bart/bart2.mp3', 'assets/sounds/bart/bart3.mp3', "assets/images/bart/bart1.png", "assets/images/bart/bart2.png");
+let boitata = new Hero("Boitatá", 1, "No rio mais próximo", 29, 18, 16, 'assets/sounds/boitata/boitata1.mp3', 'assets/sounds/boitata/boitata2.mp3', 'assets/sounds/boitata/boitata3.mp3', "assets/images/boitata/boitata1.png", "assets/images/boitata/boitata2.png");
+let charizard = new Hero("Charizard", 1, "Kanto", 30, 25, 18, 'assets/sounds/charizard/charizard1.mp3', 'assets/sounds/charizard/charizard2.mp3', 'assets/sounds/charizard/charizard3.mp3', "assets/images/charizard/charizard1.png", "assets/images/charizard/charizard2.png");
+let canarinho = new Hero("Canarinho Pistola", 2, "Granja Comary", 23, 32, 25, 'assets/sounds/canarinho/canarinho1.mp3', 'assets/sounds/canarinho/canarinho2.mp3', 'assets/sounds/canarinho/canarinho3.mp3', "assets/images/canarinho/canarinho1.png", "assets/images/canarinho/canarinho2.png");
+let relampago = new Hero("Relâmpago McQueen", 2, "Radiator Springs", 21, 35, 20, 'assets/sounds/relampago/relampago1.mp3', 'assets/sounds/relampago/relampago2.mp3', 'assets/sounds/relampago/relampago3.mp3', 'assets/images/relampago/relampago1.png', 'assets/images/relampago/relampago2.png');
+let tanjiro = new Hero("Tanjiro Kamado", 1, "Caçador de demônios", 28, 28, 25, "assets/sounds/tanjiro/tanjiro1.mp3", "assets/sounds/tanjiro/tanjiro2.mp3", "assets/sounds/tanjiro/tanjiro3.mp3", "assets/images/tanjiro/tanjiro1.png", "assets/images/tanjiro/tanjiro2.png");
+
 //variaveis globais:
 //vez - indica qual player é a vez
 // player1 - recebe o jogador da vez
@@ -171,15 +175,21 @@ function escolherpersonagem(value) {
     aparecerimagem(mula.img, mula);
   } else if (value === 12) {
     aparecerimagem(charizard.img, charizard);
-  }else if (value === 13) {
+  } else if (value === 13) {
     aparecerimagem(canarinho.img, canarinho);
+  } else if (value === 14) {
+    aparecerimagem(relampago.img, relampago);
+  } else if (value === 15) {
+    aparecerimagem(tanjiro.img, tanjiro);
   }
 }
+
 function alternarVez() {
   vez = 2;
   document.getElementById("btn-alternar").disabled = true;
   document.getElementById(`${tag1}`).setAttribute("onclick", "alertar()");
   document.getElementById(`img${tag1}`).className = "imgEscolhida";
+  document.getElementById("choose-phrase").innerHTML = "Player2 - Escolha seu pokémon:"
 }
 
 function finalizarSelecao() {
@@ -189,15 +199,10 @@ function finalizarSelecao() {
     element.disabled = true
   });
 }
-
-function alertar() {
-  alert("Escolha um personagem diferente de seu oponente!");
-}
-
 function reselect() {
   vez = 1;
   document.getElementById("div-btn").style.display = "none";
-
+  document.getElementById("choose-phrase").innerHTML = "Player1 - Escolha seu pokémon:"
   document.querySelector(".imgEscolhida").className = "imgpoke"
   document.querySelectorAll(".imgpoke").forEach(element => {
     element.setAttribute('src', 'assets/images/pokeball.png')
@@ -214,10 +219,10 @@ function reselect() {
   document.getElementById("btn-alternar").style.display = 'none';
   document.getElementById("btn-finalizarSelecao").style.display = 'none';
 
-  document.querySelector("#img-player1").setAttribute('src','assets/images/nada.png');
-  document.querySelector("#escolhap1").setAttribute('src','assets/images/nada.png');
-  document.querySelector("#escolhap2").setAttribute('src','assets/images/nada.png');
-  document.querySelector("#img-player2").setAttribute('src','assets/images/nada.png');
+  document.querySelector("#img-player1").setAttribute('src', 'assets/images/nada.png');
+  document.querySelector("#escolhap1").setAttribute('src', 'assets/images/nada.png');
+  document.querySelector("#escolhap2").setAttribute('src', 'assets/images/nada.png');
+  document.querySelector("#img-player2").setAttribute('src', 'assets/images/nada.png');
 
 
   document.getElementById("nome-personagem-p1").innerHTML = "";
@@ -302,11 +307,11 @@ function lightAttack(player, victim) {
     attacked = player1
     turnp2 += 1
   }
-  soundeffect2.setAttribute('src', `${attacker.atk1sound}`);
+  soundeffect2.setAttribute('src', `${attacker.atksound}`);
   soundeffect2.play();
   attacker.lightAtk();
   textNDamage(attacker, attacked, 0)
-  updateHP(attacked, attacker);
+  updateHP(attacked, attacker, victim,player);
   attacked.rageactual += 10
   $(`#img-player${victim}`).effect("shake");
   updateRG()
@@ -329,11 +334,10 @@ function heavyAttack(player, victim) {
   soundeffect2.play();
 
   prob = Math.random();
-  console.log(`prob = ${prob}`);
   if (prob <= 0.65) {
     attacker.heavyAtk();
     textNDamage(attacker, attacked, 1)
-    updateHP(attacked, attacker);
+    updateHP(attacked, attacker, victim, player);
     attacker.mpactual -= 20;
     updateMP();
     attacked.rageactual += 15
@@ -363,11 +367,10 @@ function specialAttack(player, victim) {
   soundeffect2.play();
 
   prob = Math.random();
-  console.log(`prob = ${prob}`);
   if (prob <= 0.4) {
     attacker.special();
     textNDamage(attacker, attacked, 2)
-    updateHP(attacked, attacker);
+    updateHP(attacked, attacker, victim,player);
     attacker.mpactual -= 50;
     updateMP();
     attacked.rageactual += 30
@@ -395,16 +398,22 @@ function recoilAttack(player, victim) {
     attacked = player1
     turnp2 += 1
   }
-  // soundeffect2.play();
-  attacker.heavyAtk();
-  textNDamage(attacker, attacked, 3)
-  attacker.hpactual -= Math.round(attacker.recoil);
-  updateHP(attacked, attacker);
-  attacked.rageactual += 20
-  $(`#img-player${victim}`).effect("shake");
-  $(`#img-player${player}`).effect("shake");
-  updateRG()
-  definesTurn();
+  if ((attacker.hpactual - Math.round(attacker.recoil)) > 0) {
+    // soundeffect2.play();
+    attacker.heavyAtk();
+    textNDamage(attacker, attacked, 3)
+    attacker.hpactual -= Math.round(attacker.recoil);
+    updateHP(attacked, attacker, victim, player);
+    attacked.rageactual += 20
+    $(`#img-player${victim}`).effect("shake");
+    $(`#img-player${player}`).effect("shake");
+    updateRG()
+    definesTurn();
+  } else {
+    textBox.innerHTML = `${attacker.name} não pode realizar esse ataque! Ele poderia causar danos graves à sua própria saúde! Escolha outro ataque!`
+    document.getElementById(`#btnOrange${player}`).disabled = true;
+    document.getElementById(`#btnOrange${victim}`).disabled = true;
+  }
 }
 
 function attBoost(player) {
@@ -414,7 +423,6 @@ function attBoost(player) {
   } else if (player === 2) {
     boostedPlayer = player2
   }
-  console.log(boostedPlayer.rageimg)
   document.querySelector(`#img-player${player}`).setAttribute('src', boostedPlayer.rageimg);
   boostedPlayer.st = Math.round(boostedPlayer.st * 1.25);
   boostedPlayer.agi = Math.round(boostedPlayer.agi * 1.25);
@@ -434,7 +442,7 @@ function attBoost(player) {
   definesTurn();
 }
 // atualiza as barras de hp
-function updateHP(attackedPlayer, otherPlayer) {
+function updateHP(attackedPlayer, otherPlayer, victim, player) {
   document.getElementById("actual-hp-player1").innerHTML = player1.hpactual;
   document.getElementById("actual-hp-player2").innerHTML = player2.hpactual;
   const hp1 = (player1.hpactual / player1.hp) * 100;
@@ -444,8 +452,12 @@ function updateHP(attackedPlayer, otherPlayer) {
   if (attackedPlayer.hpactual <= 0) {
     soundeffect.setAttribute('src', 'assets/sounds/ganhador.wav');
     soundeffect.play();
-    alert("Fim de jogo! " + otherPlayer.name + " ganhou")
-    // location.reload()
+    $(`#player${victim}`).fadeOut();
+    $(`#ground-p${player}`).fadeOut();
+    $(`.btn`).fadeOut();
+    document.getElementById("restart").setAttribute('style','z-index:0;');
+    music.pause()
+    textBox.innerHTML = `${attackedPlayer.name} desmaiou! ${otherPlayer.name} ganhou!`
   }
 
 }
@@ -472,15 +484,13 @@ function textNDamage(playerWhoAttacked, otherPlayer, attackType) {
   const damageNow = Math.ceil(playerWhoAttacked.damage * (1 - (player2.def / 100)));
   const attackTypes = ["ATK Fraco", "ATK Forte", "Especial", "ATK com Recuo"]
   otherPlayer.hpactual = otherPlayer.hpactual - damageNow;
-  console.log(player2.hpactual)
   textBox.innerHTML = `${playerWhoAttacked.name} causou ${damageNow} de dano em ${otherPlayer.name} com ${attackTypes[attackType]}`
 }
 
 let turnp1 = 0;
 let turnp2 = 0;
 let first = 0;
-console.log("turnp1", turnp1)
-console.log("turnp2", turnp2)
+
 // define qual jogador pode jogar desabilitando o atk do outro
 function definesTurn() {
   if (turnp1 === 0 && turnp2 === 0) {
@@ -544,7 +554,6 @@ function whoPlaysFirst() {
     first = 2
   } else {
     let luck = Math.random()
-    console.log(luck)
     if (luck < 0.5) {
       p1 = false
       p2 = true

@@ -23,7 +23,7 @@
     </section>
     <br>
     <section id="parte1" style="display:none">
-        <h2 id="a">Escolha seu pokémon: </h2>
+        <h2 id="choose-phrase">Player1 - Escolha seu pokémon: </h2>
         <div id="listapersonagens">
             <button class="poke" onclick="escolherpersonagem(1)" id="1"><img id="img1" class="imgpoke"
                     src="assets/images/pokeball.png"></button>
@@ -51,6 +51,10 @@
                     src="assets/images/pokeball.png"></button>
             <button class="poke" onclick="escolherpersonagem(13)" id="13"><img id="img13" class="imgpoke"
                     src="assets/images/pokeball.png"></button>
+            <button class="poke" onclick="escolherpersonagem(14)" id="14"><img id="img14" class="imgpoke"
+                    src="assets/images/pokeball.png"></button>
+            <button class="poke" onclick="escolherpersonagem(15)" id="15"><img id="img15" class="imgpoke"
+                    src="assets/images/pokeball.png"></button>
         </div>
         <div id="confronto">
             <div class="atributos" id="atributos-personagem-p1">
@@ -63,9 +67,10 @@
             </div>
             <div class="personagem" id="p1">
                 <h2 id="nome-personagem-p1"></h2>
-                <img id="escolhap1">
+                <img id="escolhap1" src="/assets/images/nada.png">
                 <h3 id="universo-personagem-p1"></h3>
-                <input id="btn-alternar" type="image" src="assets/images/ok.png" onclick="alternarVez()" style="display: none" />
+                <input class="choose-btn" id="btn-alternar" type="image" src="assets/images/ok.png"
+                    onclick="alternarVez()" style="display: none" />
             </div>
 
             <img src="assets/images/vs.png">
@@ -73,10 +78,10 @@
 
             <div class="personagem" id="p2">
                 <h2 id="nome-personagem-p2"></h2>
-                <img id="escolhap2">
+                <img id="escolhap2" src="/assets/images/nada.png">
                 <h3 id="universo-personagem-p2"></h3>
-                <input id="btn-finalizarSelecao" type="image" src="assets/images/ok.png" onclick="finalizarSelecao()"
-                    style="display: none" />
+                <input class="choose-btn" id="btn-finalizarSelecao" type="image" src="assets/images/ok.png"
+                    onclick="finalizarSelecao()" style="display: none" />
             </div>
             <div class="atributos" id="atributos-personagem-p2">
                 <h4 id="hp2"></h4>
@@ -89,12 +94,9 @@
             </div>
         </div>
         <div id="div-btn" style="display: none">
-            <input id="btnbatalha" type="image" onclick="batalhar()" src="assets/images/fight.png"/>
-            <input type ="image" src="assets/images/oops.png" onclick="reselect()"></div>
+            <input class="btns-selection" id="btn-fight" type="image" onclick="batalhar()" src="assets/images/fight.png" />
+            <input class="btns-selection" id="btn-oops" type="image" src="assets/images/oops.png" onclick="reselect()">
     </section>
-    </div>
-    </div>
-
 
 
     <div id="parte2" style="display:none">
@@ -190,9 +192,9 @@
                     </div>
                 </div>
             </section>
-            <input type="image" src="assets/images/start.png" onclick="location.reload()"/>
             <audio id="soundeffect2"></audio>
         </main>
+        <input id="restart" type="image" src="assets/images/start.png" onclick="location.reload()" />
     </div>
 </body>
 
